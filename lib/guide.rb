@@ -5,10 +5,18 @@ class Guide
   # having an argument will allow us to have different files potentially (ex. guide for San Francisco, a guide for Columbus, a guide for New York)
   def initialize(path=nil) 
     # locate the restaurant text file at path 
+    Restaurant.filepath = path
+    if Restaurant.file_exists?
+      puts "Found restaurant file."
     # or 
     # create new file
-    # exit if create files fails
-
+    elsif  Restaurant.create_file
+      puts "Created restaurant file."
+      # exit if create files fails
+    else
+      puts "Exiting.\n\n"
+      exit!
+    end
   end
 
   def launch!

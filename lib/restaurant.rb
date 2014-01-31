@@ -6,6 +6,10 @@ class Restaurant
   # a class variable here for the file path, so we dont need an instance to have the file path
   @@filepath = nil
 
+  def self.filepath=(path=nil)
+    # The APP_ROOT will assume that the path will always have to be relative to the app root
+    @@filepath = File.join(APP_ROOT, path)
+  end
   # class methods here: 
   # file_exists? is a method so that restaurant class should know whether its file exists or not, if not, it will know how to create a file
   def self.file_exists?
