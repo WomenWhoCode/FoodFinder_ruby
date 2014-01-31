@@ -1,1 +1,3 @@
 Chipotle	mexican	$25
+Picaros	Spanish	$12
+Olive Garden	Italian	$50
