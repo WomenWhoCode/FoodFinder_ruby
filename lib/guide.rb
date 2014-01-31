@@ -25,7 +25,7 @@ class Guide
     result = nil
     until result == :quit
      action = get_action
-      result = do_action(user_response)
+      result = do_action(action)
     end
     conclusion
   end
@@ -44,13 +44,23 @@ class Guide
     when 'find'
       puts 'Finding...'
     when 'add'
-      puts 'Adding...'
+      add
     when 'quit'
       return :quit
     else 
       puts "\nI don't understand your command .\n"
     end
     
+  end
+
+  def add
+    puts "\nAdd a restaurant\n\n".upcase 
+    restaurant = Restaurant.build_using_questions
+    if restaurant.save
+      puts "\nRestaurant Added\n\n"
+    else
+      "\nSave error : Restaurant Added\n\n"
+    end
   end
 
   def introduction

@@ -10,6 +10,8 @@ class Restaurant
     # The APP_ROOT will assume that the path will always have to be relative to the app root
     @@filepath = File.join(APP_ROOT, path)
   end
+
+  attr_accessor :name, :cuisine, :price
   # class methods here: 
   # file_exists? is a method so that restaurant class should know whether its file exists or not, if not, it will know how to create a file
   def self.file_exists?
@@ -39,6 +41,35 @@ class Restaurant
   def self.saved_restaurants
     #read the restaurant file
     # return instances of restaurant
+  end
+
+  def self.build_using_questions
+    
+    args = {}
+    print "Restaurant name: "
+    args[:name] = gets.chomp.strip
+
+    print "Cuisine type: "
+    args[:cuisine] = gets.chomp.strip
+
+    print "Average Price: "
+    args[:price] = gets.chomp.strip 
+
+    return self.new(args)
+  end
+
+  def initialize(args={})
+    @name = args[:name]       || ""
+    @cuisine = args[:cuisine] || ""
+    @price = args[:price]     || ""
+  end
+
+  def save
+    return false unless Restaurant.file_usable?
+    File.open(@@filepath, 'a') do |file|
+      file.puts "#{[@name, @cuisine, @price].join("\t")}\n"
+    end
+    return true
   end
 
 end
