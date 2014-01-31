@@ -14,10 +14,26 @@ class Restaurant
   # file_exists? is a method so that restaurant class should know whether its file exists or not, if not, it will know how to create a file
   def self.file_exists?
     #class should know if the restaurant file exists 
+    if @@filepath && File.exists?(@@filepath)
+      return true
+    else
+      return false 
+    end
+  end
+
+# Replace file_exists? for file_usable including a better naming and code to apply the right code for the right responsibility of it 
+  def self.file_usable?
+    return false unless @@filepath
+    return false unless File.exists?(@@filepath)
+    return false unless File.readable?(@@filepath)
+    return false unless File.writable?(@@filepath)
+    return true 
   end
 
   def self.create_file
     #create the restaurant file
+    File.open(@@filepath, "w") unless file_exists?
+    return file_usable?
   end
 
   def self.saved_restaurants
