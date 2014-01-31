@@ -1,3 +1,5 @@
+require 'restaurant'
+
 class Guide
 
   # having an argument will allow us to have different files potentially (ex. guide for San Francisco, a guide for Columbus, a guide for New York)
