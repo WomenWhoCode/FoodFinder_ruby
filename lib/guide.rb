@@ -29,8 +29,8 @@ class Guide
     # action loop
     result = nil
     until result == :quit
-     action = get_action
-     result = do_action(action)
+     action, args = get_action
+     result = do_action(action, args)
     end
     conclusion
   end
@@ -42,9 +42,11 @@ class Guide
       puts "Actions: " + Guide::Config.actions.join(", ")
       print "> "
       user_response = gets.chomp
-      action = user_response.downcase.strip
+      args = user_response.downcase.strip.split(' ')
+      action = args.shift
     end
-    return action
+    # this is an array : [action, args]
+    return action, args
   end
 
   def do_action(action, args=[])
