@@ -33,6 +33,53 @@ You can add, find, add, quit
         Sort using: 'list cuisine' or 'list by cuisine'
 
         Actions: list, find, add, quit
+
+        --------------------------------------------------------------------
+
+        Actions: list, find, add, quit
+      > list by cuisine
+
+                          LISTING RESTAURANTS
+
+       Name                           Cuisine               Price
+      ------------------------------------------------------------
+       Olive Garden                   Italian              $$50.00
+       Muyabi                         Japanese             $$14.00
+       Chipotle                       Mexican              $$25.00
+       Picaros                        Spanish              $$12.00
+      ------------------------------------------------------------
+      Sort using: 'list name', 'list by name', 'list cuisine', 'list by cuisine', 'list price' or 'list by price'
+
+      Actions: list, find, add, quit
+      > list by price
+
+                          LISTING RESTAURANTS
+
+       Name                           Cuisine               Price
+      ------------------------------------------------------------
+       Chipotle                       Mexican              $$25.00
+       Picaros                        Spanish              $$12.00
+       Olive Garden                   Italian              $$50.00
+       Muyabi                         Japanese             $$14.00
+      ------------------------------------------------------------
+      Sort using: 'list name', 'list by name', 'list cuisine', 'list by cuisine', 'list price' or 'list by price'
+
+      Actions: list, find, add, quit
+      > list by name
+
+                          LISTING RESTAURANTS
+
+       Name                           Cuisine               Price
+      ------------------------------------------------------------
+       Chipotle                       Mexican              $$25.00
+       Muyabi                         Japanese             $$14.00
+       Olive Garden                   Italian              $$50.00
+       Picaros                        Spanish              $$12.00
+      ------------------------------------------------------------
+      Sort using: 'list name', 'list by name', 'list cuisine', 'list by cuisine', 'list price' or 'list by price'
+
+      Actions: list, find, add, quit
+      >
     
 ## To get started: ##
 

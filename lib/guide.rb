@@ -77,7 +77,7 @@ class Guide
   end
 
   def list(args=[])
-    sort_order = args.shift
+    sort_order = args.shift 
     sort_order = args.shift if sort_order == 'by'
     sort_order = "name" unless ['name', 'cuisine', 'price'].include?(sort_order)
     
@@ -95,7 +95,7 @@ class Guide
       end
     end
     output_restaurant_table(restaurants)
-    puts "Sort using: 'list cuisine' or 'list by cuisine'\n\n"
+    puts "Sort using: 'list name', 'list by name', 'list cuisine', 'list by cuisine', 'list price' or 'list by price' \n\n"
   end
 
    def find(keyword="")
