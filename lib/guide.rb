@@ -65,7 +65,7 @@ class Guide
   end
 
   def add
-    puts "\nAdd a restaurant\n\n".upcase 
+    output_action_header("Add a restaurant")
     restaurant = Restaurant.build_using_questions
     if restaurant.save
       puts "\nRestaurant Added\n\n"
@@ -122,8 +122,9 @@ class Guide
     puts "\n <<< Goodbye and Buen Provecho! >>> \n\n\n"
   end
 
+
   private
-  
+  # method that will help us to output center with width of 60 character space
   def output_action_header(text)
     puts "\n#{text.upcase.center(60)}\n\n"
   end

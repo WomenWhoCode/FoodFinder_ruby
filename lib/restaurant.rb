@@ -4,8 +4,8 @@ require 'support/number_helper'
 # put all of the functionality of dealing with that data file in the restaurant class.
 
 class Restaurant
-  # a class variable here for the file path, so we dont need an instance to have the file path
   include NumberHelper
+  # a class variable here for the file path, so we dont need an instance to have the file path
   @@filepath = nil
 
   def self.filepath=(path=nil)

@@ -26,6 +26,7 @@ module NumberHelper
       # make sure the decimal is not too large
       decimal = decimal[0, precision-1]
       # make sure the decimal is not too short
+          # ljust: is a build-in method that fills characters : ex "Hello.ljust(10,"*") "  => "Hello******"
       precise_decimal = decimal.ljust(precision, "0")
     end
     
